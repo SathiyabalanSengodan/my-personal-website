@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"c:\\\\Users\\\\sathi\\\\vscode-workspace\\\\Personal Website\\\\sathiyabalan.html\")"
+    ]
+  }
+}
