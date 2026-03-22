@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sathiyabalan Sengodan — SAP Integration Architect</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Arial', sans-serif; font-size: 11pt; color: #111; background: #fff; line-height: 1.5; }
+
+    .page { max-width: 800px; margin: 0 auto; padding: 2.5rem 2.5rem; }
+
+    /* HEADER */
+    .resume-header { border-bottom: 2px solid #C8882A; padding-bottom: 1rem; margin-bottom: 1.2rem; }
+    .resume-name { font-size: 26pt; font-weight: 700; color: #0B1F3A; letter-spacing: -0.5px; }
+    .resume-title { font-size: 12pt; color: #C8882A; font-weight: 600; margin-top: 0.2rem; margin-bottom: 0.6rem; }
+    .resume-contact { display: flex; flex-wrap: wrap; gap: 0.3rem 1.5rem; font-size: 9.5pt; color: #444; }
+    .resume-contact a { color: #444; text-decoration: none; }
+
+    /* SECTIONS */
+    .section { margin-bottom: 1.2rem; }
+    .section-title { font-size: 11pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #0B1F3A; border-bottom: 1px solid #C8882A; padding-bottom: 0.2rem; margin-bottom: 0.7rem; }
+
+    /* SUMMARY */
+    .summary p { font-size: 10.5pt; color: #222; line-height: 1.6; margin-bottom: 0.4rem; }
+
+    /* EXPERIENCE */
+    .exp-item { margin-bottom: 1rem; }
+    .exp-header { display: flex; justify-content: space-between; align-items: baseline; }
+    .exp-company { font-weight: 700; font-size: 11pt; color: #0B1F3A; }
+    .exp-period { font-size: 9.5pt; color: #666; }
+    .exp-role { font-size: 10.5pt; font-weight: 600; color: #C8882A; margin-bottom: 0.2rem; }
+    .exp-location { font-size: 9.5pt; color: #666; margin-bottom: 0.3rem; }
+    .exp-desc { font-size: 10pt; color: #333; margin-bottom: 0.4rem; line-height: 1.5; }
+    .exp-bullets { list-style: disc; padding-left: 1.2rem; }
+    .exp-bullets li { font-size: 10pt; color: #333; margin-bottom: 0.2rem; line-height: 1.5; }
+
+    /* SKILLS */
+    .skills-row { margin-bottom: 0.4rem; font-size: 10pt; }
+    .skills-label { font-weight: 700; color: #0B1F3A; }
+
+    /* CERTIFICATIONS */
+    .certs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.2rem 1rem; }
+    .cert-item { font-size: 10pt; color: #333; }
+    .cert-item::before { content: '✓ '; color: #C8882A; font-weight: 700; }
+
+    /* EDUCATION */
+    .edu-item { display: flex; justify-content: space-between; align-items: baseline; }
+    .edu-degree { font-weight: 700; font-size: 10.5pt; color: #0B1F3A; }
+    .edu-year { font-size: 9.5pt; color: #666; }
+    .edu-school { font-size: 10pt; color: #444; }
+
+    /* PRINT */
+    @media print {
+      body { font-size: 10.5pt; }
+      .page { padding: 1.5rem 1.5rem; max-width: 100%; }
+      .resume-name { font-size: 22pt; }
+      a { color: #444 !important; text-decoration: none !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="resume-header">
+    <div class="resume-name">Sathiyabalan Sengodan</div>
+    <div class="resume-title">SAP Integration Architect</div>
+    <div class="resume-contact">
+      <span>California, United States</span>
+      <span>|</span>
+      <a href="mailto:sathiyabalan.sen@gmail.com">sathiyabalan.sen@gmail.com</a>
+      <span>|</span>
+      <span>(669) 264-3063</span>
+      <span>|</span>
+      <a href="https://www.linkedin.com/in/sathiyabalan/" target="_blank">linkedin.com/in/sathiyabalan</a>
+      <span>|</span>
+      <a href="https://www.credly.com/users/sathiyabalan-sengodan" target="_blank">credly.com/users/sathiyabalan-sengodan</a>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section summary">
+    <div class="section-title">Professional Summary</div>
+    <p>I design and deliver enterprise integration architectures on SAP BTP that perform at scale. With 15+ years of hands-on expertise, I specialize in SAP BTP Integration Suite — building fault-tolerant, observable iFlows using API-first design, event-driven messaging, and secure HTTPS/mTLS/OAuth 2.0 patterns. I've architected 100+ production-grade integration flows across AP/AR, Supply Chain Finance, and S/4HANA Public Cloud landscapes.</p>
+    <p>Beyond BTP, I bring deep expertise in SAP PI/PO migration, ABAP/RAP development, SAP Document AI, and cross-platform integrations with AWS, Google Cloud, Ariba, and SAP Business Network — delivering architectures that are secure, compliant, and built to last.</p>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Work Experience</div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-company">SAP Taulia</div>
+        <div class="exp-period">2023 — Present</div>
+      </div>
+      <div class="exp-role">SAP Integration Architect</div>
+      <div class="exp-location">San Francisco, CA</div>
+      <p class="exp-desc">At SAP Taulia — a leading fintech under SAP's umbrella — I architect and deliver enterprise-grade integration solutions on SAP BTP Integration Suite, connecting global ERP ecosystems with AP/AR, Supply Chain Finance, and S/4HANA Public Cloud. I own the full integration lifecycle: design, development, security, deployment, and monitoring at scale.</p>
+      <ul class="exp-bullets">
+        <li>Designed and delivered 45+ production-grade SAP BTP/CPI integration flows across AP/AR, Supply Chain Finance, and SAP Business Network — reducing customer onboarding cycles by 50%</li>
+        <li>Built fault-tolerant, observable interfaces with retry logic, exception subprocesses, and dead letter queues — monitored via SAP Cloud ALM, improving incident response by 40%</li>
+        <li>Delivered large-scale data mapping workflows maintaining 99.9% accuracy across mission-critical financial interfaces</li>
+        <li>Implemented GitHub Actions CI/CD pipelines for automated iFlow deployment — cutting release time by 35% and post-release defects by 60%</li>
+        <li>Enforced enterprise-grade security across all integrations — mTLS certificate rotation, OAuth 2.0, Principal Propagation, and IAS-based authentication</li>
+        <li>Leveraged SAP Document AI for intelligent document parsing, significantly reducing manual processing effort across AP workflows</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-company">Cognizant</div>
+        <div class="exp-period">2014 — 2023</div>
+      </div>
+      <div class="exp-role">Technology Architect</div>
+      <div class="exp-location">Sunnyvale, CA</div>
+      <p class="exp-desc">During my tenure at Cognizant, I led integration architecture and SAP development across multiple Fortune 500 clients — spanning SAP PI/PO to SAP BTP migrations, A2A/B2B interface design, and full-stack ABAP development. I delivered end-to-end integration solutions across finance, supply chain, and CRM landscapes.</p>
+      <ul class="exp-bullets">
+        <li>Architected and migrated 20+ ECC/CRM interfaces to SAP S/4HANA & SAP BTP — reducing overall integration costs by 40%</li>
+        <li>Designed and delivered A2A/B2B interfaces using SAP PI/PO, CPI, ABAP, OData, SOAP, and IDoc — processing millions of transactions across AP/AR and Supply Chain workflows</li>
+        <li>Delivered 100+ ABAP/RAP/Fiori/UI5 solutions including custom RFCs, BAPIs, BADIs, and IDoc enhancements — improving operational efficiency by 25%</li>
+        <li>Built ABAP-based data conversion and migration programs for AP/AR and Supply Chain Finance transformation projects</li>
+        <li>Optimized OData services, CDS views, and AMDP logic for high-performance real-time integration scenarios</li>
+        <li>Designed integration orchestration, error-handling, and automated testing frameworks for mission-critical enterprise interfaces</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-company">SAP Labs</div>
+        <div class="exp-period">2013 — 2014</div>
+      </div>
+      <div class="exp-role">Full Stack Engineer</div>
+      <div class="exp-location">Bangalore, India</div>
+      <p class="exp-desc">At SAP Labs, as part of the Public Service team, I developed and enhanced SAP front-end and back-end applications — building secure, scalable integrations between SAP Fiori/UI5, SAP Gateway, and S/4HANA systems for public sector clients.</p>
+      <ul class="exp-bullets">
+        <li>Built 10+ SAP Fiori/UI5 applications with OData services tailored for public sector workflows — improving user engagement by 30%</li>
+        <li>Developed and optimized ABAP/CDS/AMDP backend services, improving application performance by 40%</li>
+        <li>Delivered secure integrations using REST/OData, RFC modules, and SAP Gateway — enabling seamless UI-to-backend connectivity</li>
+        <li>Collaborated closely with SAP product teams to align implementations with SAP UX best practices and design standards</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-company">Arteria Technologies</div>
+        <div class="exp-period">2011 — 2013</div>
+      </div>
+      <div class="exp-role">Software Engineer</div>
+      <div class="exp-location">Bangalore, India</div>
+      <p class="exp-desc">At Arteria Technologies, I began my SAP integration career working with manufacturing clients — designing and automating PI/PO-based A2A/B2B interfaces that connected ERP systems with suppliers, logistics partners, and financial systems.</p>
+      <ul class="exp-bullets">
+        <li>Designed and automated 30+ SAP PI/PO integration interfaces for manufacturing workflows — processing over 100,000 monthly transactions and reducing manual processing by 60%</li>
+        <li>Built A2A/B2B integrations using SOAP, REST, IDoc, RFC, SFTP, XML, and flat file patterns for logistics, procurement, and finance processes</li>
+        <li>Developed message mappings, UDFs, and XSLT transformations to handle complex data format conversions across manufacturing supply chain systems</li>
+        <li>Implemented monitoring, alerting, and error-handling routines to ensure interface reliability and reduce downtime in production environments</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div class="section">
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-row"><span class="skills-label">SAP Integration: </span>SAP BTP Integration Suite, SAP Cloud Integration (CPI), SAP API Management, SAP Event Mesh, SAP Trading Partner Management, PI/PO, IDoc, OData, SOAP/WSDL, AS2, SFTP, RFC, Kafka, Ariba Adapter, SuccessFactors Adapter</div>
+    <div class="skills-row"><span class="skills-label">Integration Patterns: </span>API-First Design, Event-Driven Architecture, Content-Based Routing, Message Enrichment, Idempotent Consumer, Dead Letter Queue, Exception Subprocess, Retry Logic</div>
+    <div class="skills-row"><span class="skills-label">Programming: </span>ABAP, ABAP Objects, RAP (RESTful ABAP), CDS Views, AMDP, OData Services, RFC/BAPI, SAP Fiori/UI5, Groovy Script, XSLT, Java Mapping, UDF, Python, SQL, Java, Shell/Bash, YAML</div>
+    <div class="skills-row"><span class="skills-label">AI & Automation: </span>SAP AI Core, SAP AI Launchpad, SAP Generative AI Hub, SAP Document AI, Joule, OpenAI, Claude, Gemini, GitHub Copilot, Claude Code, Prompt Engineering, Rovo Agents, Glean Agents, SAP Build</div>
+    <div class="skills-row"><span class="skills-label">Security: </span>mTLS, OAuth 2.0/JWT, SAML 2.0, OpenID Connect, IAS, SAP Cloud Connector, SAP Connectivity Service, SAP Destination Service, Principal Propagation, Keystore Management, GDPR/HIPAA</div>
+    <div class="skills-row"><span class="skills-label">DevOps & Tools: </span>Git, GitHub Actions, Jenkins, CI/CD Pipelines, Postman, SoapUI, SAP Cloud ALM, Splunk, JIRA, Confluence, Agile/SAFe, Scrum</div>
+    <div class="skills-row"><span class="skills-label">Business Domains: </span>Accounts Payable, Accounts Receivable, Supply Chain Finance, Early Payment Programs, Dynamic Discounting, Supplier Onboarding, SAP Ariba, E-Invoicing, DRC Cloud, FI/CO, MM, SD, CRM</div>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section">
+    <div class="section-title">Certifications</div>
+    <div class="certs-grid">
+      <div class="cert-item">SAP Certified – SAP Generative AI Developer</div>
+      <div class="cert-item">SAP Certified – Development Associate, SAP Integration Suite</div>
+      <div class="cert-item">SAP Certified – Integration Developer</div>
+      <div class="cert-item">SAP Certified – Development Associate, SAP BTP Extensions (CAP)</div>
+      <div class="cert-item">SAP Certified – Backend Developer, SAP CAP Model</div>
+      <div class="cert-item">SAP Certified – SAP Build Developer</div>
+      <div class="cert-item">SAP Certified – Citizen Developer Associate, SAP Build</div>
+      <div class="cert-item">SAP Certified – ABAP Programming in SAP S/4HANA</div>
+      <div class="cert-item">SAP – Creating Apps with SAP Build Code</div>
+      <div class="cert-item">Google Cloud – Cloud Digital Leader</div>
+      <div class="cert-item">Microsoft – Azure Fundamentals (AZ-900)</div>
+      <div class="cert-item">Microsoft – Azure AI Fundamentals (AI-900)</div>
+      <div class="cert-item">SAFe® 5 Certified Scrum Master</div>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-item">
+      <div class="edu-degree">Bachelor of Engineering — Computer Science</div>
+      <div class="edu-year">2005 – 2009</div>
+    </div>
+    <div class="edu-school">Anna University, Chennai, India</div>
+  </div>
+
+</div>
+<script>
+  window.onload = function() { window.print(); };
+</script>
+</body>
+</html>
