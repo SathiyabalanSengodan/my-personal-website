@@ -122,6 +122,16 @@
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .skill-tag { padding: 0.28rem 0.65rem; background: var(--bg); border: 1px solid var(--border); border-radius: 50px; font-size: 0.72rem; color: var(--text-muted); font-weight: 500; transition: all 0.18s; }
     .skill-block:hover .skill-tag { background: var(--amber-pale); border-color: rgba(200,136,42,0.3); color: var(--amber); }
+    .skill-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+    .skill-group:last-child { margin-bottom: 0; }
+    .skill-group-label { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.3rem; }
+    .skill-block-body { position: relative; max-height: 110px; overflow: hidden; transition: max-height 0.4s ease; }
+    .skill-block-body.expanded { max-height: 600px; }
+    .skill-block-body::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 48px; background: linear-gradient(transparent, var(--white)); pointer-events: none; transition: opacity 0.3s; }
+    .skill-block-body.expanded::after { opacity: 0; }
+    .skill-block:hover .skill-block-body::after { background: linear-gradient(transparent, #FEF6E8); }
+    .skill-expand-btn { margin-top: 0.8rem; font-family: var(--font-mono); font-size: 0.65rem; color: var(--amber); background: none; border: none; cursor: pointer; padding: 0; letter-spacing: 0.08em; font-weight: 500; transition: opacity 0.2s; }
+    .skill-expand-btn:hover { opacity: 0.7; }
 
     /* EXPERIENCE */
     #experience { background: var(--white); }
@@ -265,8 +275,8 @@
           </div>
           <div class="hero-divider"></div>
           <div class="hero-stat">
-            <div class="hero-stat-num" data-target="70" data-suffix="+">0+</div>
-            <div class="hero-stat-desc">SAP BTP Integration Flows delivered</div>
+            <div class="hero-stat-num" data-target="100" data-suffix="+">0+</div>
+            <div class="hero-stat-desc">Integration Flows designed and delivered</div>
           </div>
           <div class="hero-divider"></div>
           <div class="hero-stat">
@@ -286,10 +296,10 @@
     </div>
     <div class="about-layout">
       <div class="about-body reveal">
-        <p>Accomplished <strong>SAP Integration Architect</strong> with 15+ years of proven expertise in designing and delivering scalable, secure, cloud-native integration solutions across SAP and non-SAP ecosystems.</p>
-        <p>Specialized in <strong>SAP BTP Integration Suite, CPI, PI/PO, ABAP</strong>, and cloud platforms including AWS and Google Cloud. Strong track record building high-volume AP/AR and Supply Chain integrations at <em>SAP Taulia</em> — a fintech company under SAP's umbrella.</p>
-        <p>Deep experience in <strong>secure communication architectures</strong> including mTLS, OAuth 2.0, and certificate management, alongside AI-driven integration workflows and CI/CD engineering practices that consistently improve operational efficiency.</p>
-        <p>Across SAP S/4HANA Cloud, Ariba, SAP Business Network, and financial/supply chain integration landscapes, I deliver <strong>resilient, future-proof architectures</strong> that stand the test of scale.</p>
+        <p>I design and deliver <strong>enterprise integration architectures on SAP BTP</strong> that perform at scale.</p>
+        <p>With 15+ years of hands-on expertise, I specialize in <strong>SAP BTP Integration Suite</strong> — building fault-tolerant, observable iFlows using API-first design, event-driven messaging, and secure HTTPS/mTLS/OAuth 2.0 patterns. I've architected <strong>100+ production-grade integration flows</strong> across AP/AR, Supply Chain Finance, and S/4HANA Public Cloud landscapes.</p>
+        <p>At <em>SAP Taulia</em>, I lead the end-to-end integration lifecycle — from design and development to deployment and monitoring using <strong>SAP Cloud ALM</strong>. I reduced customer onboarding cycles by 50%, improved incident response by 40%, and cut deployment time by 35% through <strong>GitHub Actions CI/CD pipelines</strong> — while maintaining 99.9% data accuracy across mission-critical financial interfaces.</p>
+        <p>Beyond BTP, I bring deep expertise in <strong>SAP PI/PO migration, ABAP/RAP development, SAP Document AI</strong>, and cross-platform integrations with AWS, Google Cloud, Ariba, and SAP Business Network — delivering architectures that are secure, compliant, and built to last.</p>
       </div>
       <div class="stats-col">
         <div class="stat-row">
@@ -301,7 +311,7 @@
           <div><div class="stat-label">Faster Onboarding</div><div class="stat-sub">Client cycle reduction</div></div>
         </div>
         <div class="stat-row">
-          <div class="stat-num" data-target="40" data-suffix="+">0+</div>
+          <div class="stat-num" data-target="45" data-suffix="+">0+</div>
           <div><div class="stat-label">Enterprise iFlows</div><div class="stat-sub">Delivered at SAP Taulia</div></div>
         </div>
         <div class="stat-row">
@@ -322,44 +332,170 @@
       <div class="skill-block">
         <div class="skill-block-icon">🔗</div>
         <div class="skill-block-title">SAP Integration</div>
-        <div class="skill-tags">
-          <span class="skill-tag">SAP BTP Integration Suite</span><span class="skill-tag">CPI / iFlow</span><span class="skill-tag">PI/PO</span><span class="skill-tag">S/4HANA</span><span class="skill-tag">Event Mesh</span><span class="skill-tag">API Management</span><span class="skill-tag">IDoc</span><span class="skill-tag">RFC / BAPI</span><span class="skill-tag">OData</span><span class="skill-tag">REST / SOAP</span><span class="skill-tag">ESB Patterns</span>
+        <div class="skill-block-body" id="sap-int-body">
+          <div class="skill-group">
+            <div class="skill-group-label">Platform</div>
+            <div class="skill-tags">
+              <span class="skill-tag">SAP BTP Integration Suite</span><span class="skill-tag">SAP Cloud Integration (CPI)</span><span class="skill-tag">SAP API Management</span><span class="skill-tag">SAP Event Mesh</span><span class="skill-tag">SAP Trading Partner Management</span><span class="skill-tag">SAP Business Accelerator Hub</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Adapters</div>
+            <div class="skill-tags">
+              <span class="skill-tag">HTTPS Adapter</span><span class="skill-tag">SFTP Adapter</span><span class="skill-tag">OData Adapter</span><span class="skill-tag">IDoc Adapter</span><span class="skill-tag">RFC Adapter</span><span class="skill-tag">SOAP / WSDL</span><span class="skill-tag">AS2 Adapter</span><span class="skill-tag">Kafka</span><span class="skill-tag">JDBC Adapter</span><span class="skill-tag">Ariba Adapter</span><span class="skill-tag">SuccessFactors Adapter</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Patterns</div>
+            <div class="skill-tags">
+              <span class="skill-tag">API-First Design</span><span class="skill-tag">Event-Driven Architecture</span><span class="skill-tag">Content-Based Routing</span><span class="skill-tag">Message Enrichment</span><span class="skill-tag">Idempotent Consumer</span><span class="skill-tag">Dead Letter Queue</span><span class="skill-tag">Exception Subprocess</span><span class="skill-tag">Retry Logic</span>
+            </div>
+          </div>
         </div>
+        <button class="skill-expand-btn" id="sap-int-btn" onclick="toggleSkill('sap-int-body','sap-int-btn')">Show more ↓</button>
       </div>
       <div class="skill-block">
         <div class="skill-block-icon">💻</div>
         <div class="skill-block-title">Programming</div>
-        <div class="skill-tags">
-          <span class="skill-tag">ABAP</span><span class="skill-tag">ABAP Objects</span><span class="skill-tag">CDS</span><span class="skill-tag">AMDP</span><span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">JavaScript</span><span class="skill-tag">Groovy Script</span><span class="skill-tag">XSLT</span>
+        <div class="skill-block-body" id="prog-body">
+          <div class="skill-group">
+            <div class="skill-group-label">Integration Scripting (PI/PO & CPI)</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Groovy Script</span><span class="skill-tag">XSLT</span><span class="skill-tag">Java Mapping</span><span class="skill-tag">UDF (User Defined Functions)</span><span class="skill-tag">Message Mapping</span><span class="skill-tag">Adapter Module</span><span class="skill-tag">JavaScript</span><span class="skill-tag">JSON / XML</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">SAP Programming</div>
+            <div class="skill-tags">
+              <span class="skill-tag">ABAP</span><span class="skill-tag">ABAP Objects</span><span class="skill-tag">RAP (RESTful ABAP)</span><span class="skill-tag">CDS Views</span><span class="skill-tag">CDS Annotations</span><span class="skill-tag">AMDP</span><span class="skill-tag">OData Services</span><span class="skill-tag">RFC / BAPI</span><span class="skill-tag">BAdI / Enhancement Framework</span><span class="skill-tag">SAP Fiori / UI5</span><span class="skill-tag">SAP Gateway</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">General Purpose</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">Java</span><span class="skill-tag">Shell / Bash</span><span class="skill-tag">YAML</span>
+            </div>
+          </div>
         </div>
+        <button class="skill-expand-btn" id="prog-btn" onclick="toggleSkill('prog-body','prog-btn')">Show more ↓</button>
       </div>
       <div class="skill-block">
         <div class="skill-block-icon">🤖</div>
         <div class="skill-block-title">AI &amp; Automation</div>
-        <div class="skill-tags">
-          <span class="skill-tag">SAP AI Core</span><span class="skill-tag">SAP AI Launchpad</span><span class="skill-tag">OpenAI</span><span class="skill-tag">Claude</span><span class="skill-tag">Gemini</span><span class="skill-tag">GitHub Copilot</span><span class="skill-tag">Rovo Agents</span><span class="skill-tag">Prompt Engineering</span>
+        <div class="skill-block-body" id="ai-body">
+          <div class="skill-group">
+            <div class="skill-group-label">SAP AI</div>
+            <div class="skill-tags">
+              <span class="skill-tag">SAP AI Core</span><span class="skill-tag">SAP AI Launchpad</span><span class="skill-tag">SAP Generative AI Hub</span><span class="skill-tag">SAP Document AI</span><span class="skill-tag">Joule</span><span class="skill-tag">SAP AI Services</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">LLM & Models</div>
+            <div class="skill-tags">
+              <span class="skill-tag">OpenAI (GPT)</span><span class="skill-tag">Claude (Anthropic)</span><span class="skill-tag">Gemini</span><span class="skill-tag">LLM API Integration</span><span class="skill-tag">RAG (Retrieval-Augmented Generation)</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">AI Dev Tools</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Claude Code</span><span class="skill-tag">Claude CoWork</span><span class="skill-tag">Prompt Engineering</span><span class="skill-tag">AI-Driven Workflow Design (n8n)</span><span class="skill-tag">GitHub Copilot</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Automation</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Rovo Agents</span><span class="skill-tag">Glean Agents</span><span class="skill-tag">SAP Build</span><span class="skill-tag">CI/CD Automation</span>
+            </div>
+          </div>
         </div>
+        <button class="skill-expand-btn" id="ai-btn" onclick="toggleSkill('ai-body','ai-btn')">Show more ↓</button>
       </div>
       <div class="skill-block">
         <div class="skill-block-icon">🔒</div>
         <div class="skill-block-title">Security</div>
-        <div class="skill-tags">
-          <span class="skill-tag">HTTPS / SSL/TLS</span><span class="skill-tag">mTLS</span><span class="skill-tag">OAuth 2.0</span><span class="skill-tag">Certificates</span><span class="skill-tag">Secure API Architecture</span><span class="skill-tag">GDPR / HIPAA</span><span class="skill-tag">IDP / IAS</span>
+        <div class="skill-block-body" id="sec-body">
+          <div class="skill-group">
+            <div class="skill-group-label">Authentication & Protocols</div>
+            <div class="skill-tags">
+              <span class="skill-tag">HTTPS / SSL/TLS</span><span class="skill-tag">mTLS</span><span class="skill-tag">OAuth 2.0 / JWT</span><span class="skill-tag">SAML 2.0</span><span class="skill-tag">OpenID Connect</span><span class="skill-tag">IDP / IAS</span><span class="skill-tag">Principal Propagation</span><span class="skill-tag">Keystore Management</span><span class="skill-tag">Credential Store</span><span class="skill-tag">Certificate Management</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">SAP Connectivity</div>
+            <div class="skill-tags">
+              <span class="skill-tag">SAP Cloud Connector</span><span class="skill-tag">SAP Connectivity Service</span><span class="skill-tag">SAP Destination Service</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Compliance & Architecture</div>
+            <div class="skill-tags">
+              <span class="skill-tag">GDPR / HIPAA</span><span class="skill-tag">Secure API Architecture</span><span class="skill-tag">Zero Trust Architecture</span><span class="skill-tag">API Security Best Practices</span>
+            </div>
+          </div>
         </div>
+        <button class="skill-expand-btn" id="sec-btn" onclick="toggleSkill('sec-body','sec-btn')">Show more ↓</button>
       </div>
       <div class="skill-block">
         <div class="skill-block-icon">⚙️</div>
         <div class="skill-block-title">DevOps &amp; Tools</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Git</span><span class="skill-tag">Jenkins</span><span class="skill-tag">CI/CD</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">Splunk</span><span class="skill-tag">Postman</span><span class="skill-tag">JIRA</span><span class="skill-tag">SAP Cloud ALM</span><span class="skill-tag">Agile / SAFe</span>
+        <div class="skill-block-body" id="devops-body">
+          <div class="skill-group">
+            <div class="skill-group-label">Source Control & CI/CD</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span><span class="skill-tag">GitHub Actions</span><span class="skill-tag">Jenkins</span><span class="skill-tag">CI/CD Pipelines</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Testing & API Tools</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Postman</span><span class="skill-tag">SoapUI</span><span class="skill-tag">REST Client</span><span class="skill-tag">Unit Testing</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Monitoring & Observability</div>
+            <div class="skill-tags">
+              <span class="skill-tag">SAP Cloud ALM</span><span class="skill-tag">Splunk</span><span class="skill-tag">Message Monitoring</span><span class="skill-tag">Alert Notifications</span><span class="skill-tag">Trace &amp; Debug</span><span class="skill-tag">Error Analysis</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Project & Agile</div>
+            <div class="skill-tags">
+              <span class="skill-tag">JIRA</span><span class="skill-tag">Confluence</span><span class="skill-tag">Agile / SAFe</span><span class="skill-tag">Scrum</span>
+            </div>
+          </div>
         </div>
+        <button class="skill-expand-btn" id="devops-btn" onclick="toggleSkill('devops-body','devops-btn')">Show more ↓</button>
       </div>
       <div class="skill-block">
         <div class="skill-block-icon">📊</div>
         <div class="skill-block-title">Business Domains</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Accounts Payable</span><span class="skill-tag">Accounts Receivable</span><span class="skill-tag">Supply Chain Finance</span><span class="skill-tag">MM / SD</span><span class="skill-tag">Document Compliance</span><span class="skill-tag">Supplier Onboarding</span>
+        <div class="skill-block-body" id="biz-body">
+          <div class="skill-group">
+            <div class="skill-group-label">Finance & Treasury</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Accounts Payable (AP)</span><span class="skill-tag">Accounts Receivable (AR)</span><span class="skill-tag">Supply Chain Finance</span><span class="skill-tag">Early Payment Programs</span><span class="skill-tag">Dynamic Discounting</span><span class="skill-tag">Invoice Processing</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Supply Chain & Procurement</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Supplier Onboarding</span><span class="skill-tag">SAP Ariba Network</span><span class="skill-tag">SAP Business Network</span><span class="skill-tag">MM / SD</span><span class="skill-tag">Procurement Automation</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">Compliance & Governance</div>
+            <div class="skill-tags">
+              <span class="skill-tag">E-Invoicing</span><span class="skill-tag">DRC Cloud</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <div class="skill-group-label">SAP Modules</div>
+            <div class="skill-tags">
+              <span class="skill-tag">FI / CO</span><span class="skill-tag">MM</span><span class="skill-tag">SD</span><span class="skill-tag">WM</span><span class="skill-tag">CRM</span>
+            </div>
+          </div>
         </div>
+        <button class="skill-expand-btn" id="biz-btn" onclick="toggleSkill('biz-body','biz-btn')">Show more ↓</button>
       </div>
     </div>
   </section>
@@ -379,7 +515,7 @@
         </div>
         <div>
           <div class="exp-role">SAP Integration Architect</div>
-          <p class="exp-desc">Lead SAP Integration Architect delivering 40+ enterprise-grade SAP BTP/CPI iFlows, reducing customer onboarding cycles by 50% across AP/AR and Supply Chain Finance. Designed SAP S/4HANA Public Cloud integrations using API-first, secure HTTPS/mTLS, and event-driven patterns.</p>
+          <p class="exp-desc">Lead SAP Integration Architect delivering 45+ enterprise-grade SAP BTP/CPI iFlows, reducing customer onboarding cycles by 50% across AP/AR and Supply Chain Finance. Designed SAP S/4HANA Public Cloud integrations using API-first, secure HTTPS/mTLS, and event-driven patterns.</p>
           <ul class="exp-bullets">
             <li>Built <strong>fault-tolerant, observable interfaces</strong> using retry logic, exception subprocesses, and SAP Cloud ALM dashboards — improving incident response time by <strong>40%</strong></li>
             <li>Delivered large-scale data mapping workflows with <strong>99.9% accuracy</strong> for AP/AR/SCF integrations</li>
@@ -535,6 +671,12 @@
   </footer>
 
   <script>
+    function toggleSkill(bodyId, btnId) {
+      const body = document.getElementById(bodyId);
+      const btn = document.getElementById(btnId);
+      const expanded = body.classList.toggle('expanded');
+      btn.textContent = expanded ? 'Show less ↑' : 'Show more ↓';
+    }
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); });
     const io = new IntersectionObserver((entries) => {
